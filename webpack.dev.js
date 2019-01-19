@@ -10,7 +10,11 @@ module.exports = merge(common, {
     compress: true,
     port: 9000,
     proxy: {
-        '/api': 'http://react.ru'
+        '/api': {
+                target: 'http://testbackend',
+                secure: false,
+                changeOrigin: true
+            }
         }
     },
     entry: './src/js/index.js',
